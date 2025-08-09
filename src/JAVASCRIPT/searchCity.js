@@ -5,7 +5,7 @@ import updateHoursWeatherUI from './updateHoursWeatherUI';
 export default async function searchCity(city, input) {
 	const apiKey = 'd116da3137684ca098a91041250908 ';
 	const days = 5;
-	const url = `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${encodeURIComponent(
+	const url = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${encodeURIComponent(
 		city
 	)}&days=${days}&lang=en`;
 

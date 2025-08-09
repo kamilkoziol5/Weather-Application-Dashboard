@@ -3,7 +3,7 @@ export default function renderHeader() {
 	const header = document.createElement('header');
 	header.innerHTML = `
     <button class="logo">
-				<img src="public/thunder.png" alt="" />
+<img src="./thunder.png" alt="" />
 				<h1>Wheater App</h1>
 			</button>
 			<div class="input-wrapper">
