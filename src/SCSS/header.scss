@@ -1,0 +1,106 @@
+header {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
+	padding: 2rem 4rem;
+	gap: 1rem;
+	position: fixed;
+	top: 0;
+	z-index: 9999999;
+	background-color: var(--bgColor);
+
+	.logo {
+		display: flex;
+		align-items: center;
+		gap: 2rem;
+		background-color: transparent;
+		border: none;
+		outline: none;
+		cursor: pointer;
+
+		img {
+			width: 80px;
+		}
+
+		h1 {
+			font-size: 2rem;
+			color: var(--textColor);
+		}
+	}
+	.input-wrapper {
+		position: relative;
+		flex: 1;
+		max-width: 900px;
+		width: 100%;
+
+		input {
+			background-color: var(--cardColor);
+			border: 1px solid var(--strokeColor);
+			border-radius: 60px;
+			color: var(--textColor);
+			font-size: 1.2rem;
+			outline: none;
+			padding: 1rem 0 1rem 3rem;
+			transition: 300ms ease;
+			width: 100%;
+
+			&::placeholder {
+				color: var(--grayText);
+			}
+
+			&:hover {
+				background-color: var(--inputHover);
+				border: 1px solid var(--grayText);
+			}
+
+			&:focus {
+				border: 1px solid var(--accentColor);
+			}
+		}
+
+		span {
+			position: absolute;
+			top: 50%;
+			left: 1rem;
+			color: var(--grayText);
+			transform: translateY(-50%);
+		}
+	}
+
+	.currecnt-location {
+		background-color: var(--accentColor);
+		border: 1px solid var(--strokeColor);
+		border-radius: 100px;
+		color: #171717;
+		cursor: pointer;
+		font-weight: 500;
+		font-size: 1rem;
+		outline: none;
+		padding: 1rem 2rem;
+		transition: 200ms ease;
+
+		&:hover {
+			background-color: var(--accentHover);
+			transform: scale(0.98) translateY(-2px);
+			box-shadow: 0 4px 10px rgba(255, 232, 98, 0.15);
+		}
+	}
+
+	.switch-theme {
+		cursor: pointer;
+		background-color: transparent;
+		outline: none;
+		border: none;
+		cursor: pointer;
+
+		span {
+			font-size: 2rem;
+			color: var(--textColor);
+			transition: 300ms ease;
+			&:hover {
+				color: var(--accentColor);
+			}
+		}
+	}
+}

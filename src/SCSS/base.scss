@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+body {
+	height: 100dvh;
+	background-color: var(--bgColor);
+}
+
+:root {
+	--bgColor: #171717;
+	--cardColor: #19191a;
+	--textColor: #e0e0e0;
+	--grayText: #727272;
+	--strokeColor: #313131;
+	--accentColor: #f0b514;
+	--accentHover: #fcc93d;
+	--inputHover: #111111;
+	--strokeCard: #262626;
+}
+
+body.active {
+	--bgColor: #eeeeee;
+	--cardColor: #e4e4e4;
+	--textColor: #121212;
+	--strokeColor: #c4c4c4;
+	--grayText: #666666;
+	--inputHover: #fff4e7;
+	--strokeCard: #cfcfcf;
+}
+
+#app {
+	width: 100%;
+	min-height: 100%;
+}
