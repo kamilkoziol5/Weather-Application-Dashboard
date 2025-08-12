@@ -12,18 +12,10 @@ export default function updateTodayWeatherUI(data) {
 	const devIndex = document.querySelector('.col-flex-info .dev');
 	const sunrise = document.querySelector('.sunrise .col-time .value');
 	const sunset = document.querySelector('.sunset .col-time .value');
-	const humidity = document.querySelector(
-		'.highlights .bottom-part .card .details .highlight-humidity'
-	);
-	const pressure = document.querySelector(
-		'.highlights .bottom-part .card .details .highlight-pressure'
-	);
-	const visibility = document.querySelector(
-		'.highlights .bottom-part .card .details .highlight-visibility'
-	);
-	const feelsLike = document.querySelector(
-		'.highlights .bottom-part .card .details .highlight-feels'
-	);
+	const humidity = document.querySelector('.highlights .bottom-part .card .details .highlight-humidity');
+	const pressure = document.querySelector('.highlights .bottom-part .card .details .highlight-pressure');
+	const visibility = document.querySelector('.highlights .bottom-part .card .details .highlight-visibility');
+	const feelsLike = document.querySelector('.highlights .bottom-part .card .details .highlight-feels');
 	const qualityDiv = document.querySelector('.quality-info');
 
 	const visibilityData = data.current.vis_km;
@@ -32,12 +24,7 @@ export default function updateTodayWeatherUI(data) {
 	if (visibilityData > 8 && humidityData < 60) {
 		qualityDiv.textContent = 'Good';
 		qualityDiv.style.backgroundColor = '#1cdd26';
-	} else if (
-		visibilityData > 5 &&
-		visibilityData <= 8 &&
-		humidityData >= 60 &&
-		humidityData <= 75
-	) {
+	} else if (visibilityData > 5 && visibilityData <= 8 && humidityData >= 60 && humidityData <= 75) {
 		qualityDiv.textContent = 'Medium';
 		qualityDiv.style.backgroundColor = '#f1a517ff';
 	} else {
@@ -49,15 +36,13 @@ export default function updateTodayWeatherUI(data) {
 	const conditionObj = icons.find(c => c.code === conditionCode);
 	const iconFolder = data.current.is_day ? 'day' : 'night';
 
-	const iconSrc = conditionObj
-		? `${iconFolder}/${conditionObj.icon}.png`
-		: hourData.condition.icon;
+	const iconSrc = conditionObj ? `${iconFolder}/${conditionObj.icon}.png` : hourData.condition.icon;
 
 	tempInfo.textContent = `${Math.floor(data.current.temp_c)} °C`;
 	weatherDescription.textContent = data.current.condition.text;
 	dateText.textContent = data.location.localtime.split(' ')[0];
 	locationText.textContent = data.location.name;
-	iconWeather.src = `public/weather_icons/${iconSrc}`;
+	iconWeather.src = `weather_icons/${iconSrc}`;
 	windSpeed.textContent = `${data.current.wind_kph} kph`;
 	uvIndex.textContent = data.current.uv;
 	gtiIndex.textContent = data.current.gti;

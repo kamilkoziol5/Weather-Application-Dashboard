@@ -14,15 +14,13 @@ export default function updateNextDaysWeatherUI(data) {
 
 		const conditionObj = icons.find(c => c.code === conditionCode);
 
-		const iconSrc = conditionObj
-			? `${conditionObj.icon}.png`
-			: dayData.day.condition.icon;
+		const iconSrc = conditionObj ? `${conditionObj.icon}.png` : dayData.day.condition.icon;
 
 		const dayContainer = document.createElement('div');
 		dayContainer.classList.add('next-day-container');
 		dayContainer.innerHTML = `
         				<div class="icon-temp">
-							<img src="public/weather_icons/day/${iconSrc}" alt="" />
+							<img src="weather_icons/day/${iconSrc}" alt="weather icon" />
 							<h3>${temp}</h3>
 						</div>
 			  			

@@ -6,10 +6,7 @@ export default function updateHoursWeatherUI(data) {
 
 	const now = new Date();
 
-	const hoursData = [
-		...data.forecast.forecastday[0].hour,
-		...data.forecast.forecastday[1].hour,
-	];
+	const hoursData = [...data.forecast.forecastday[0].hour, ...data.forecast.forecastday[1].hour];
 
 	const next24Hours = hoursData
 		.filter(hourData => {
@@ -32,15 +29,13 @@ export default function updateHoursWeatherUI(data) {
 
 		const iconFolder = hourData.is_day ? 'day' : 'night';
 
-		const iconSrc = conditionObj
-			? `${iconFolder}/${conditionObj.icon}.png`
-			: hourData.condition.icon;
+		const iconSrc = conditionObj ? `${iconFolder}/${conditionObj.icon}.png` : hourData.condition.icon;
 
 		const hourElement = document.createElement('div');
 		hourElement.classList.add('card');
 		hourElement.innerHTML = `
 			<span class="hour">${time}</span>
-			<img src="public/weather_icons/${iconSrc}" alt="" />
+				<img src="weather_icons/${iconSrc}" alt="weather icon" />
 			<span class="temperature">${temp} °C</span>
 		`;
 		hoursWrapper.appendChild(hourElement);
