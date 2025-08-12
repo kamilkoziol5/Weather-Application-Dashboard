@@ -34,37 +34,59 @@ header {
 		max-width: 900px;
 		width: 100%;
 
-		input {
-			background-color: var(--cardColor);
-			border: 1px solid var(--strokeColor);
-			border-radius: 60px;
-			color: var(--textColor);
-			font-size: 1.2rem;
-			outline: none;
-			padding: 1rem 0 1rem 3rem;
-			transition: 300ms ease;
-			width: 100%;
+		.search-input-wrapper {
+			position: relative;
 
-			&::placeholder {
-				color: var(--grayText);
-			}
+			input {
+				background-color: var(--cardColor);
+				border: 1px solid var(--strokeColor);
+				border-radius: 60px;
+				color: var(--textColor);
+				font-size: 1.2rem;
+				outline: none;
+				padding: 1rem 0 1rem 3rem;
+				transition: 300ms ease;
+				width: 100%;
 
-			&:hover {
-				background-color: var(--inputHover);
-				border: 1px solid var(--grayText);
-			}
+				&::placeholder {
+					color: var(--grayText);
+				}
 
-			&:focus {
-				border: 1px solid var(--accentColor);
+				&:hover {
+					background-color: var(--inputHover);
+					border: 1px solid var(--grayText);
+				}
+
+				&:focus {
+					border: 1px solid var(--accentColor);
+				}
 			}
 		}
-
-		span {
+		.search-btn {
+			cursor: pointer;
 			position: absolute;
 			top: 50%;
 			left: 1rem;
-			color: var(--grayText);
 			transform: translateY(-50%);
+			background-color: transparent;
+			padding: 3px;
+			border: none;
+			outline: none;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			span {
+				color: var(--grayText);
+				transition: 200ms ease;
+			}
+
+			&:hover {
+				span {
+					color: var(--textColor);
+					transform: scale(1.05);
+				}
+			}
 		}
 	}
 

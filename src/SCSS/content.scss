@@ -101,7 +101,7 @@
 			flex-direction: column;
 			align-items: stretch;
 			justify-content: space-between;
-			gap: 0.7rem;
+			gap: 1rem;
 
 			.next-day-container {
 				display: flex;
@@ -111,7 +111,7 @@
 				.icon-temp {
 					display: flex;
 					align-items: center;
-					gap: 0.7rem;
+					gap: 1rem;
 
 					h3 {
 						font-size: 1.45rem;
@@ -119,7 +119,8 @@
 					}
 				}
 				img {
-					width: 55px;
+					width: 50px;
+					height: 50px;
 				}
 
 				.date {
@@ -328,6 +329,7 @@
 					flex-direction: column;
 					justify-content: space-between;
 					align-items: center;
+					gap: 1rem;
 
 					.hour {
 						color: var(--textColor);

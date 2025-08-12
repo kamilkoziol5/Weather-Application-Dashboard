@@ -1,0 +1,23 @@
+.popup {
+	background-color: #d31414;
+	border-radius: 8px;
+	border: 1px solid var(--strokeColor);
+	color: #fff;
+	font-size: 1rem;
+	font-weight: 500;
+	padding: 0.85rem;
+	position: absolute;
+	top: 7rem;
+	left: 50%;
+	opacity: 0;
+	pointer-events: none;
+	transition: 300ms ease;
+	transform: translateX(-50%) translateY(-200%) scale(0);
+	user-select: none;
+	z-index: 99999899999;
+
+	&.show {
+		opacity: 1;
+		transform: translateX(-50%) translateY(0%) scale(1);
+	}
+}

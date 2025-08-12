@@ -20,7 +20,6 @@ export default async function searchCity(city, input) {
 		updateTodayWeatherUI(data);
 		updateNextDaysWeatherUI(data);
 		updateHoursWeatherUI(data);
-		input.value = '';
 	} catch (err) {
 		console.error('Błąd:', err);
 	}

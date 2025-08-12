@@ -1,3 +1,5 @@
+import icons from '../../data/icons.json';
+
 export default function updateNextDaysWeatherUI(data) {
 	const nextDaysWrapper = document.querySelector('.forecast');
 	nextDaysWrapper.innerHTML = '';
@@ -7,14 +9,20 @@ export default function updateNextDaysWeatherUI(data) {
 		const options = { day: 'numeric', month: 'short' };
 		const formatedDate = dateObj.toLocaleString('en-US', options);
 		const dayOfWeek = dateObj.toLocaleDateString('en-US', { weekday: 'long' });
-		const iconSrc = dayData.day.condition.icon;
+		const conditionCode = dayData.day.condition.code;
 		const temp = Math.round(dayData.day.avgtemp_c);
+
+		const conditionObj = icons.find(c => c.code === conditionCode);
+
+		const iconSrc = conditionObj
+			? `${conditionObj.icon}.png`
+			: dayData.day.condition.icon;
 
 		const dayContainer = document.createElement('div');
 		dayContainer.classList.add('next-day-container');
 		dayContainer.innerHTML = `
         				<div class="icon-temp">
-							<img src="${iconSrc}" alt="" />
+							<img src="public/weather_icons/day/${iconSrc}" alt="" />
 							<h3>${temp}</h3>
 						</div>
 			  			

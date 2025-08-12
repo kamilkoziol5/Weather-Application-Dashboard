@@ -1,3 +1,5 @@
+import icons from '../../data/icons.json';
+
 export default function updateTodayWeatherUI(data) {
 	const tempInfo = document.querySelector('.temp');
 	const weatherDescription = document.querySelector('.weather-text-info');
@@ -43,11 +45,19 @@ export default function updateTodayWeatherUI(data) {
 		qualityDiv.style.backgroundColor = '#fc422aff';
 	}
 
+	const conditionCode = data.current.condition.code;
+	const conditionObj = icons.find(c => c.code === conditionCode);
+	const iconFolder = data.current.is_day ? 'day' : 'night';
+
+	const iconSrc = conditionObj
+		? `${iconFolder}/${conditionObj.icon}.png`
+		: hourData.condition.icon;
+
 	tempInfo.textContent = `${Math.floor(data.current.temp_c)} °C`;
 	weatherDescription.textContent = data.current.condition.text;
 	dateText.textContent = data.location.localtime.split(' ')[0];
 	locationText.textContent = data.location.name;
-	iconWeather.src = data.current.condition.icon;
+	iconWeather.src = `public/weather_icons/${iconSrc}`;
 	windSpeed.textContent = `${data.current.wind_kph} kph`;
 	uvIndex.textContent = data.current.uv;
 	gtiIndex.textContent = data.current.gti;

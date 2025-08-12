@@ -1,3 +1,5 @@
+import icons from '../../data/icons.json';
+
 export default function updateHoursWeatherUI(data) {
 	const hoursWrapper = document.querySelector('.today-forecast .wrapper');
 	hoursWrapper.innerHTML = '';
@@ -16,22 +18,29 @@ export default function updateHoursWeatherUI(data) {
 		})
 		.slice(0, 24);
 
-	console.log(next24Hours);
-
 	next24Hours.forEach(hourData => {
 		const time = new Date(hourData.time).toLocaleTimeString('en-US', {
 			hour: '2-digit',
 			minute: '2-digit',
 			hour12: false,
 		});
+
 		const temp = Math.round(hourData.temp_c);
-		const iconSrc = hourData.condition.icon;
+		const iconCode = hourData.condition.code;
+
+		const conditionObj = icons.find(c => c.code === iconCode);
+
+		const iconFolder = hourData.is_day ? 'day' : 'night';
+
+		const iconSrc = conditionObj
+			? `${iconFolder}/${conditionObj.icon}.png`
+			: hourData.condition.icon;
 
 		const hourElement = document.createElement('div');
 		hourElement.classList.add('card');
 		hourElement.innerHTML = `
 			<span class="hour">${time}</span>
-			<img src="${iconSrc}" alt="" />
+			<img src="public/weather_icons/${iconSrc}" alt="" />
 			<span class="temperature">${temp} °C</span>
 		`;
 		hoursWrapper.appendChild(hourElement);
