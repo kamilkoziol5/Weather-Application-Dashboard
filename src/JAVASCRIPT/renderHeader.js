@@ -1,3 +1,5 @@
+import { animateHeader } from './animations';
+
 export default function renderHeader() {
 	const app = document.querySelector('#app');
 	const header = document.createElement('header');
@@ -14,11 +16,13 @@ export default function renderHeader() {
 				<span class="material-symbols-outlined"> search </span>
 				</button>
 			</div>
-			<button class="currecnt-location">Current Location</button>
+			<div class="button-wrapper"><button class="currecnt-location">Current Location</button></div>
 			<button class="switch-theme" id="toggler">
 				<span class="material-symbols-outlined">lightbulb</span>
 			</button>
     `;
 
 	app.append(header);
+
+	animateHeader();
 }

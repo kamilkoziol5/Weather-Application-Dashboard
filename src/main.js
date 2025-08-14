@@ -6,6 +6,8 @@ import './SCSS/style.scss';
 import defaultWeatherUI from './JAVASCRIPT/defaultWeatherUI.js';
 import currentLocation from './JAVASCRIPT/currentLocation.js';
 import digitalClock from './JAVASCRIPT/digitalClock.js';
+import { gsap } from 'gsap';
+import { animateSections } from './JAVASCRIPT/animations.js';
 
 renderHeader();
 renderApp();
@@ -14,3 +16,4 @@ handleInput();
 defaultWeatherUI();
 currentLocation();
 setInterval(() => digitalClock());
+animateSections();

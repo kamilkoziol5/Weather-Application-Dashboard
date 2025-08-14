@@ -1,4 +1,5 @@
 import icons from '../../data/icons.json';
+import { animateTodayHoursForecast } from './animations';
 
 export default function updateHoursWeatherUI(data) {
 	const hoursWrapper = document.querySelector('.today-forecast .wrapper');
@@ -40,4 +41,6 @@ export default function updateHoursWeatherUI(data) {
 		`;
 		hoursWrapper.appendChild(hourElement);
 	});
+
+	animateTodayHoursForecast();
 }

@@ -1,6 +1,8 @@
 import icons from '../../data/icons.json';
+import { animateTodayWeather } from './animations';
 
 export default function updateTodayWeatherUI(data) {
+	const textContainer = document.querySelector('.main-content .section-wrapper .today .top-part .text-container');
 	const tempInfo = document.querySelector('.temp');
 	const weatherDescription = document.querySelector('.weather-text-info');
 	const dateText = document.querySelector('.date-text');
@@ -53,4 +55,6 @@ export default function updateTodayWeatherUI(data) {
 	pressure.textContent = `${data.current.pressure_mb} hPa`;
 	visibility.textContent = `${visibilityData} km`;
 	feelsLike.textContent = `${data.current.feelslike_c} °C`;
+
+	animateTodayWeather();
 }

@@ -28,7 +28,7 @@ export default function renderApp() {
 						</div>
 					</div>
 				</div>
-				<h2>5 Days Forecast</h2>
+				<h2 class="h2-title"> 5 Days Forecast</h2>
 				<div class="forecast container">
 					
 				</div>
@@ -132,7 +132,7 @@ export default function renderApp() {
 						</div>
 					</div>
 				</div>
-				<h2>Today At</h2>
+				<h2 class="h2-title">Today At</h2>
 				
 				<div class="today-forecast container">
 					<div class="wrapper">

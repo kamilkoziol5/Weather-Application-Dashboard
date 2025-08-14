@@ -1,4 +1,5 @@
 import icons from '../../data/icons.json';
+import { animateNextDays } from './animations';
 
 export default function updateNextDaysWeatherUI(data) {
 	const nextDaysWrapper = document.querySelector('.forecast');
@@ -33,4 +34,6 @@ export default function updateNextDaysWeatherUI(data) {
 
 		nextDaysWrapper.append(dayContainer);
 	});
+
+	animateNextDays();
 }
