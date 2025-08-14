@@ -40,6 +40,7 @@ export default function renderApp() {
 				<div class="highlights container">
 					<div class="title">
 						<h3>Today Highlights</h3>
+						<div class="digital-clock">00:00:00</div>
 					</div>
 					<div class="top-part">
 						<div class="left-side card">

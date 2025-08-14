@@ -12,9 +12,8 @@
 			}
 		}
 
-		.input-wrapper input {
+		.input-wrapper .search-input-wrapper input {
 			font-size: 1rem;
-			padding: 0.8rem 2.5rem;
 		}
 
 		.currecnt-location {
@@ -58,7 +57,6 @@
 @media (max-width: 810px) {
 	header {
 		padding: 1rem 1rem;
-		gap: 0.6rem;
 		.logo h1 {
 			display: none;
 		}
@@ -66,25 +64,51 @@
 
 	.main-content {
 		padding: 9rem 1rem 2rem 1rem;
+		.section-wrapper .today .top-part img {
+			width: 70px;
+		}
 	}
 }
 
 @media (max-width: 480px) {
-	.main-content .section-wrapper .highlights .top-part {
-		.left-side .details-container {
+	.main-content .section-wrapper .highlights {
+		.title {
 			flex-direction: column;
-			width: 100%;
-			align-items: start;
+			gap: 1rem;
+			align-items: center;
+			justify-content: center;
 
-			.col-flex-info {
-				flex-direction: row;
-				gap: 1rem;
+			.digital-clock {
+				margin-left: 0;
 			}
 		}
 
-		.right-side .sunrise-sunset-container {
-			flex-direction: column;
-			align-items: start;
+		.top-part {
+			.left-side .details-container {
+				flex-direction: column;
+				width: 100%;
+				align-items: start;
+
+				.col-flex-info {
+					flex-direction: row;
+					gap: 1rem;
+				}
+			}
+
+			.right-side .sunrise-sunset-container {
+				flex-direction: column;
+				align-items: start;
+			}
+		}
+	}
+
+	header {
+		.logo img {
+			width: 45px;
+		}
+		.input-wrapper .search-input-wrapper input {
+			padding: 0.75rem 1rem 0.75rem 3rem;
+			font-size: 0.8rem;
 		}
 	}
 }

@@ -151,10 +151,26 @@
 
 			.title {
 				margin-bottom: 1rem;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+
 				h3 {
 					font-size: 1.2rem;
 					font-weight: 300;
 					color: var(--textColor);
+				}
+
+				.digital-clock {
+					margin-left: 2rem;
+					font-size: 1.35rem;
+					font-weight: 600;
+					padding: 0.75rem;
+					background-color: var(--bgColor);
+					border: 1px solid var(--strokeColor);
+					border-radius: 6px;
+					width: 140px;
+					text-align: center;
 				}
 			}
 
