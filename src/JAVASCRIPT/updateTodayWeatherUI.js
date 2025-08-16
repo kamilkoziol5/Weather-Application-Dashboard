@@ -56,5 +56,7 @@ export default function updateTodayWeatherUI(data) {
 	visibility.textContent = `${visibilityData} km`;
 	feelsLike.textContent = `${data.current.feelslike_c} °C`;
 
-	animateTodayWeather();
+	setTimeout(() => {
+		animateTodayWeather();
+	}, 0);
 }

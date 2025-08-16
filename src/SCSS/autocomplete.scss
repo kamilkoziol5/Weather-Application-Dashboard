@@ -32,5 +32,9 @@
 		&:last-child {
 			border-bottom: none;
 		}
+
+		&.selected {
+			background-color: var(--autocomplete);
+		}
 	}
 }

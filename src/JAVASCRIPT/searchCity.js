@@ -1,6 +1,7 @@
 import updateTodayWeatherUI from './updateTodayWeatherUI';
 import updateNextDaysWeatherUI from './updateNextDaysWeatherUI';
 import updateHoursWeatherUI from './updateHoursWeatherUI';
+import { animateTodayWeather } from './animations';
 
 export default async function searchCity(city, input) {
 	const apiKey = 'd116da3137684ca098a91041250908 ';
